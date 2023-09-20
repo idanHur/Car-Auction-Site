@@ -1,6 +1,7 @@
 # .NET
 bin/
 obj/
+.editorconfig
 *.suo
 *.user
 *.userosscache
