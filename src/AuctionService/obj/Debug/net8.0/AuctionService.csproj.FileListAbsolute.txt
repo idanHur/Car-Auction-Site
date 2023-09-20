@@ -24,3 +24,17 @@ C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\refin
 C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.pdb
 C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.genruntimeconfig.cache
 C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\ref\AuctionService.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\AutoMapper.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Humanizer.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Npgsql.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\System.CodeDom.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.csproj.AssemblyReference.cache
+C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.csproj.CopyComplete
