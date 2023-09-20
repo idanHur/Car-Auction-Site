@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zynz9NZxpO876dNEtKLJptcEP6COlMCefoKVBEIFcrGInexo2cheiQ00t/9GVHKnotSjAW5zxC28e3/BS8HOrg==",
+  "dgSpecHash": "IpQtN/g6EiwqIS6FPhgdFNh/Xlo5g2Fs/lxgXte3/9agxtE6lkDAl6v5zbYKHnnKo97R/YMzjzOC6B4Ncph47w==",
   "success": true,
-  "projectFilePath": "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
+  "projectFilePath": "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
