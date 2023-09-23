@@ -44,3 +44,4 @@ C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\MassT
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\RabbitMQ.Client.dll
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Contracts.dll
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Contracts.pdb
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\MassTransit.EntityFrameworkCoreIntegration.dll
