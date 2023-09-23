@@ -1,4 +1,4 @@
-﻿namespace SearchService;
+﻿namespace SearchService.Models;
 
 public class SearchParams
 {

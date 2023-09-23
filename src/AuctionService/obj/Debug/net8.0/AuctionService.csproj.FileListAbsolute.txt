@@ -38,3 +38,9 @@ C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Npgsq
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\System.CodeDom.dll
 C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.csproj.AssemblyReference.cache
 C:\song-db-management\Car-Auction-Site\src\AuctionService\obj\Debug\net8.0\AuctionService.csproj.CopyComplete
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\MassTransit.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Contracts.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Contracts.pdb
