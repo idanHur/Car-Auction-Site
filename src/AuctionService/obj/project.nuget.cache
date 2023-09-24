@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SAdx5wLViRHs7hkYe8elIH8q8xWX/AzTYUXpQGIob5/Zlwkro6v0umawz9zJdo5HkvVSryp0w4rTdr1kpT/w8Q==",
+  "dgSpecHash": "fXswUFAU/y1ny9fFaGcZA72hxukOeCZ7x+yJe5V07O9z2gt1QoWhdoIcZeNcZyeeRD2mMYmHfJdghnAStpkNqQ==",
   "success": true,
-  "projectFilePath": "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
+  "projectFilePath": "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\idan1\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\idan1\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
