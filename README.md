@@ -13,8 +13,7 @@ This project constitutes a Car Auction Site developed using .NET 8, utilizing a 
   - [AuctionController](#auctioncontroller)
   - [SearchController](#searchcontroller)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [Tests](#tests)
+
 
 ## Prerequisites
 - **.NET 8.0:** The project is developed using .NET 8.0, so you need to have it installed to run the project.
