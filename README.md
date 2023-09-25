@@ -1,7 +1,8 @@
 # Car Auction Site
 
 ## Overview
-This project is a Car Auction Site developed using .NET 8, employing a microservices architecture. It comprises an Auction service, a Search service, and an Identity service. There is also an associated class library, Contracts, to facilitate data transfer between services using RabbitMQ. The Auction service communicates with a PostgreSQL database through Entity Framework, while the Search service employs MongoDB. The Identity service implements IdentityServer and uses PostgreSQL for data storage, providing functionalities like Single Sign-On (SSO) through the implementation of OpenID Connect and OAuth 2.0 protocols.
+This project is a Car Auction Site developed using .NET 8, employing a microservices architecture. It comprises an Auction service, a Search service, an Identity service, and a Gateway service. There is also an associated class library, Contracts, to facilitate data transfer between services using RabbitMQ. The Auction service communicates with a PostgreSQL database through Entity Framework, while the Search service employs MongoDB. The Identity service implements IdentityServer and uses PostgreSQL for data storage, providing functionalities like Single Sign-On (SSO) through the implementation of OpenID Connect and OAuth 2.0 protocols. The Gateway service acts as a reverse proxy, routing requests to the appropriate service using YARP.
+
 
 
 ## Table of Contents
@@ -36,20 +37,24 @@ The Auction service manages CRUD operations for auctions, leveraging AutoMapper 
 ### Search Service
 The Search service allows users to search for items, applying various query parameters to filter and sort search results. It utilizes MongoDB as the database for storing items.
 
+### Gateway Service
+The Gateway service acts as a reverse proxy for routing requests to the appropriate backend service. It is configured using YARP (Yet Another Reverse Proxy) to define routes and clusters for the Auction and Search services, providing a unified entry point and addressing model for the client to interact with. It allows separate handling for read and write requests to the Auction service, applying an Authorization Policy to write requests. The Gateway service also simplifies the interaction model and consolidates the API endpoint structure for the client, reducing the need for the client to manage multiple service addresses.
+
 ### Identity Service
 The Identity service is responsible for the management of user identities and provides features like Single Sign-On (SSO) using IdentityServer. It implements the OpenID Connect and OAuth 2.0 protocols to facilitate secure authentication and authorization processes. It uses PostgreSQL as its data store to maintain user-related information.
 
 ## API Endpoints
 
 ### AuctionController
-- **GET `/api/auctions`:** Retrieve a list of all auctions; can filter by date. No authorization required.
-- **GET `/api/auctions/{id}`:** Retrieve a specific auction by its ID. No authorization required.
-- **POST `/api/auctions`:** Create a new auction. Requires authorization (Seller).
-- **PUT `/api/auctions/{id}`:** Update a specific auction by its ID. Requires authorization (Seller, must match the auction's seller).
-- **DELETE `/api/auctions/{id}`:** Delete a specific auction by its ID. Requires authorization (Seller, must match the auction's seller).
+- **GET `/auctions`:** Retrieve a list of all auctions; can filter by date. No authorization required.
+- **GET `/auctions/{id}`:** Retrieve a specific auction by its ID. No authorization required.
+- **POST `/auctions`:** Create a new auction. Requires authorization (Seller).
+- **PUT `/auctions/{id}`:** Update a specific auction by its ID. Requires authorization (Seller, must match the auction's seller).
+- **DELETE `/auctions/{id}`:** Delete a specific auction by its ID. Requires authorization (Seller, must match the auction's seller).
 
 ### SearchController
-- **GET `/api/search`:** Search for items based on several query parameters, including `SearchTerm`, `OrderBy`, `FilterBy`, `Seller`, `Winner`, `PageNumber`, and `PageSize`.
+- **GET `/search`:** Search for items based on several query parameters, including `SearchTerm`, `OrderBy`, `FilterBy`, `Seller`, `Winner`, `PageNumber`, and `PageSize`.
+
 
 ## Usage
 To interact with the services, you can use the API endpoints listed above. The Auction service provides endpoints for performing CRUD operations on auctions, while the Search service provides an endpoint to search for items based on various parameters.
