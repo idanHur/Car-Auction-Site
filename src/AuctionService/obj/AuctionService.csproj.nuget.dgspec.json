@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj": {}
+    "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj": {}
   },
   "projects": {
-    "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj": {
+    "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
+        "projectUniqueName": "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
         "projectName": "AuctionService",
-        "projectPath": "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
+        "projectPath": "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\AuctionService.csproj",
         "packagesPath": "C:\\Users\\idan1\\.nuget\\packages\\",
-        "outputPath": "C:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\obj\\",
+        "outputPath": "c:\\song-db-management\\Car-Auction-Site\\src\\AuctionService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,8 +34,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj"
+              "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj": {
+                "projectPath": "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj": {
+    "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj",
+        "projectPath": "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\Contracts.csproj",
         "packagesPath": "C:\\Users\\idan1\\.nuget\\packages\\",
-        "outputPath": "C:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\obj\\",
+        "outputPath": "c:\\song-db-management\\Car-Auction-Site\\src\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
