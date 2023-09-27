@@ -1,13 +1,15 @@
 # Car Auction Site
 
 ## Overview
-This project is a Car Auction Site developed using .NET 8, employing a microservices architecture. It comprises an Auction service, a Search service, an Identity service, and a Gateway service. There is also an associated class library, Contracts, to facilitate data transfer between services using RabbitMQ. The Auction service communicates with a PostgreSQL database through Entity Framework, while the Search service employs MongoDB. The Identity service implements IdentityServer and uses PostgreSQL for data storage, providing functionalities like Single Sign-On (SSO) through the implementation of OpenID Connect and OAuth 2.0 protocols. The Gateway service acts as a reverse proxy, routing requests to the appropriate service using YARP.
+This is a Car Auction Site leveraging .NET 8 and microservices architecture. It consists of Auction, Search, Identity, and Gateway services, each serving distinct purposes within the application. The services interact using RabbitMQ and a shared class library, Contracts. The Auction and Identity services interface with a PostgreSQL database, while the Search service utilizes MongoDB. The Identity service offers Single Sign-On (SSO) capabilities via IdentityServer, implementing OpenID Connect and OAuth 2.0. Lastly, the Gateway service, employing YARP, routes requests to the corresponding service acting as a reverse proxy.
+
 
 
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
+- [Docker Integration](#Docker-Integration)
+- [Running With Docker](#Running-Project-with-Docker-Compose)
 - [Services](#services)
   - [Auction Service](#auction-service)
   - [Search Service](#search-service)
@@ -22,12 +24,57 @@ This project is a Car Auction Site developed using .NET 8, employing a microserv
 - **Docker:** Docker is used to run PostgreSQL, MongoDB, and RabbitMQ. Install Docker to manage these services using Docker Compose.
 - **IDE/Text Editor:** An Integrated Development Environment (IDE) or a text editor for writing and managing your code, such as Visual Studio or Visual Studio Code.
 
-## Installation
-To set up the project locally, follow the steps below:
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Run `docker-compose up` to start PostgreSQL, MongoDB, and RabbitMQ services.
-4. Open the solution in your preferred IDE or text editor and run the projects.
+## Docker Integration
+
+Each service including Auction, Search, Identity, and Gateway has been Dockerized. This facilitates the running of each service in an isolated environment containing its specific dependencies. Dockerization of services provides several advantages including:
+
+- **Portability:** Enables the services to run on any machine with Docker installed, mitigating system-specific configurations.
+- **Consistency:** Guarantees a consistent environment across development, testing, and production.
+- **Isolation:** Each service is run in its own container, avoiding interference with other services.
+- **Scalability:** Facilitates scaling of services by creating multiple container instances.
+
+### Docker Compose
+Docker Compose is used for defining and running multi-container Docker applications. It is used to run all services along with the dependencies, PostgreSQL, MongoDB, and RabbitMQ, in a coherent manner, connecting all components.
+
+### Exposed Ports
+The services are exposed to the following ports:
+- **Auction Service:** Accessible externally on port `7001`.
+- **Search Service:** Accessible externally on port `7002`.
+- **Identity Service:** Accessible externally on port `5000`.
+- **Gateway Service:** Accessible externally on port `6001`.
+- **PostgreSQL Database:** Accessible externally on port `5432`.
+- **MongoDB Database:** Accessible externally on port `27017`.
+- **RabbitMQ AMQP:** Accessible externally on port `5672`.
+- **RabbitMQ Management Plugin:** Accessible externally on port `15672`.
+
+By default, the services are accessible via HTTP on the above-mentioned ports. The ports can be changed in the Docker Compose configuration if different ports are desired.
+
+
+## Running Project with Docker Compose
+
+To set up and run the entire project with Docker Compose, follow the steps below:
+
+- Clone the repository:
+  ```shell
+    git clone https://github.com/idanHur/Car-Auction-Site.git
+  ```
+- Navigate to the project directory:
+  ```shell
+    cd Car-Auction-Site
+  ```
+- Build and run Docker services
+  ```shell
+    docker-compose build
+    docker-compose up
+  ```
+- Run services in the background
+  ```shell
+    docker-compose up -d
+  ```
+- To stop the services
+  ```shell
+    docker-compose down
+  ```
 
 ## Services
 
