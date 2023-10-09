@@ -1,7 +1,7 @@
 'use server'
 
 import { fetchWrapper } from "@/lib/fetchWrapper";
-import { Auction, PagedResult } from "../types";
+import { Auction, PagedResult } from "../../types";
 import { getTokenWorkaround } from "./authActions";
 import { FieldValues } from "react-hook-form";
 
@@ -20,4 +20,8 @@ export async function updateAuctionTest() {
 
 export async function createAuction(data:FieldValues) {
     return await fetchWrapper.post('auctions', data);
+}
+
+export async function getDetailedViewData(id: string): Promise<Auction> {
+    return await fetchWrapper.get(`auctions/${id}`);
 }
