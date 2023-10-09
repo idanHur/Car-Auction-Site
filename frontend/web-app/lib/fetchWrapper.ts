@@ -66,7 +66,7 @@ async function handleResponse(response: Response) {
             message: response.statusText
         }
 
-        return error; // So we can handle the error at the client side 
+        return {error}; // So we can handle the error at the client side 
     }
 }
 
