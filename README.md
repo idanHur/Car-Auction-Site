@@ -15,6 +15,7 @@ This is a Car Auction Site leveraging .NET 8 and microservices architecture. It 
   - [Search Service](#search-service)
   - [Bidding Service](#bidding-service)
   - [Gateway Service](#gateway-service)
+  - [Notification Service](#notification-service)
   - [Identity Service](#identity-service)
 - [API Endpoints](#api-endpoints)
   - [AuctionController](#auctioncontroller)
@@ -44,8 +45,9 @@ The services are exposed to the following ports:
 - **Auction Service:** Accessible externally on port `7001`.
 - **Search Service:** Accessible externally on port `7002`.
 - **Bidding Service:** Accessible externally on port `7003`.
-- **Identity Service:** Accessible externally on port `5000`.
+- **Notification Service:** Accessible externally on port `7004`.
 - **Gateway Service:** Accessible externally on port `6001`.
+- **Identity Service:** Accessible externally on port `5000`.
 - **PostgreSQL Database:** Accessible externally on port `5432`.
 - **MongoDB Database:** Accessible externally on port `27017`.
 - **RabbitMQ AMQP:** Accessible externally on port `5672`.
@@ -97,6 +99,9 @@ Communication between the Bidding Service and the Auction Service utilizes gRPC 
 
 ### Gateway Service
 The Gateway service acts as a reverse proxy for routing requests to the appropriate backend service. It is configured using YARP (Yet Another Reverse Proxy) to define routes and clusters for the Auction and Search services, providing a unified entry point and addressing model for the client to interact with. It allows separate handling for read and write requests to the Auction service, applying an Authorization Policy to write requests. The Gateway service also simplifies the interaction model and consolidates the API endpoint structure for the client, reducing the need for the client to manage multiple service addresses.
+
+### Notification Service
+The Notification Service offers real-time notifications to clients via SignalR when events like auction creation, completion, or new bids occur. It listens to these events via RabbitMQ, processes them, and instantly notifies clients through SignalR hub, ensuring timely updates without manual refreshes.
 
 ### Identity Service
 The Identity service is responsible for the management of user identities and provides features like Single Sign-On (SSO) using IdentityServer. It implements the OpenID Connect and OAuth 2.0 protocols to facilitate secure authentication and authorization processes. It uses PostgreSQL as its data store to maintain user-related information.
