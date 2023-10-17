@@ -40,12 +40,12 @@ export default async function Details({params}: {params: {id: string}}) {
           </div>
 
           <BidList user={user} auction={data} />
-
-          <div className='mt-3 grid grid-cols-1 rounded-lg'>
-            <DetailedSpecs auction={data} />
-          </div>
-
         </div>
+
+        <div className='mt-3 grid grid-cols-1 rounded-lg'>
+            <DetailedSpecs auction={data} />
+        </div>
+        
       </div>
     )
 }
