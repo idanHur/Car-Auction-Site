@@ -62,10 +62,10 @@ public class BidsController : ControllerBase
             {
                 bid.BidStatus = amount > auction.ReservPrice
                     ? BidStatus.Accepted
-                    :BidStatus.AcceptedBelowReserve;
+                    : BidStatus.AcceptedBelowReserve;
             }
 
-            if(highBid != null && bid.Amount > highBid.Amount)
+            if(highBid != null && bid.Amount <= highBid.Amount)
             {
                 bid.BidStatus = BidStatus.TooLow;
             }
