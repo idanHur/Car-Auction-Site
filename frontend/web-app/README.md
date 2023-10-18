@@ -6,7 +6,9 @@ This project is a car auction platform where users can browse, bid on, and purch
 
 - **File-system Based Routing**: Utilizes Next.js' file-system based routing to organize pages and components.
 - **State Management**: Employs Zustand for efficient and easy-to-use state management.
+- **Real-time Updates**: Implements SignalR client to provide real-time updates when a bid is made, an auction is created, or finished. This ensures users are always viewing the latest auction status.
 - **Pagination**: Implements pagination to display car listings in an organized and accessible manner.
+- **Toasts**: Integrated toast notifications provide feedback to users about their interactions, especially during bidding processes.
 - **Authentication**: Incorporates NextAuth for secure user authentication when interacting with the backend.
 
 
