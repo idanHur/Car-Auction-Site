@@ -32,6 +32,7 @@ public class AuctionsController : ControllerBase
     {
         return await _repo.GetAuctionsAsync(date);
     }
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<AuctionDto>> GetAuctionById(Guid id)
     {
