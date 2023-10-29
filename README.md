@@ -13,11 +13,16 @@ This is a Car Auction Site leveraging .NET 8 and microservices architecture. It 
 - [Services](#services)
   - [Auction Service](#auction-service)
   - [Search Service](#search-service)
+  - [Bidding Service](#bidding-service)
+  - [Gateway Service](#gateway-service)
+  - [Notification Service](#notification-service)
+  - [Identity Service](#identity-service)
 - [API Endpoints](#api-endpoints)
   - [AuctionController](#auctioncontroller)
   - [SearchController](#searchcontroller)
+  - [BiddingController](#BiddingController)
+- [Testing](#testing)
 - [Usage](#usage)
-
 
 ## Prerequisites
 - **.NET 8.0:** The project is developed using .NET 8.0, so you need to have it installed to run the project.
@@ -40,8 +45,10 @@ Docker Compose is used for defining and running multi-container Docker applicati
 The services are exposed to the following ports:
 - **Auction Service:** Accessible externally on port `7001`.
 - **Search Service:** Accessible externally on port `7002`.
-- **Identity Service:** Accessible externally on port `5000`.
+- **Bidding Service:** Accessible externally on port `7003`.
+- **Notification Service:** Accessible externally on port `7004`.
 - **Gateway Service:** Accessible externally on port `6001`.
+- **Identity Service:** Accessible externally on port `5000`.
 - **PostgreSQL Database:** Accessible externally on port `5432`.
 - **MongoDB Database:** Accessible externally on port `27017`.
 - **RabbitMQ AMQP:** Accessible externally on port `5672`.
@@ -79,13 +86,23 @@ To set up and run the entire project with Docker Compose, follow the steps below
 ## Services
 
 ### Auction Service
-The Auction service manages CRUD operations for auctions, leveraging AutoMapper for object-object mapping, MassTransit for publishing messages to RabbitMQ, and Entity Framework for interaction with PostgreSQL.
+The Auction service manages CRUD operations for auctions, leveraging AutoMapper for object-object mapping, MassTransit for publishing messages to RabbitMQ, and Entity Framework for interaction with PostgreSQL. 
+
+Additionally, it provides auction details to the Bidding Service via gRPC when queried, ensuring accurate and up-to-date information exchange.
 
 ### Search Service
 The Search service allows users to search for items, applying various query parameters to filter and sort search results. It utilizes MongoDB as the database for storing items.
 
+### Bidding Service
+The Bidding Service handles all bids. It checks if bids are valid, like if they're higher than the reserve price. It uses MongoDB to keep track of all the bids and the auctions they're for. A background service within the Bidding Service periodically checks if any auctions have ended and subsequently notifies other services.
+
+Communication between the Bidding Service and the Auction Service utilizes gRPC for synchronized interactions. In this model, the Bidding Service acts as the gRPC client, and the Auction Service acts as the gRPC server. If a bid is received for an auction not yet in the Bidding Service's database, it communicates via gRPC with the Auction Service to verify the auction's existence and status. If verified, the auction is added to the Bidding Service's database for future reference.
+
 ### Gateway Service
 The Gateway service acts as a reverse proxy for routing requests to the appropriate backend service. It is configured using YARP (Yet Another Reverse Proxy) to define routes and clusters for the Auction and Search services, providing a unified entry point and addressing model for the client to interact with. It allows separate handling for read and write requests to the Auction service, applying an Authorization Policy to write requests. The Gateway service also simplifies the interaction model and consolidates the API endpoint structure for the client, reducing the need for the client to manage multiple service addresses.
+
+### Notification Service
+The Notification Service offers real-time notifications to clients via SignalR when events like auction creation, completion, or new bids occur. It listens to these events via RabbitMQ, processes them, and instantly notifies clients through SignalR hub, ensuring timely updates without manual refreshes.
 
 ### Identity Service
 The Identity service is responsible for the management of user identities and provides features like Single Sign-On (SSO) using IdentityServer. It implements the OpenID Connect and OAuth 2.0 protocols to facilitate secure authentication and authorization processes. It uses PostgreSQL as its data store to maintain user-related information.
@@ -101,6 +118,35 @@ The Identity service is responsible for the management of user identities and pr
 
 ### SearchController
 - **GET `/search`:** Search for items based on several query parameters, including `SearchTerm`, `OrderBy`, `FilterBy`, `Seller`, `Winner`, `PageNumber`, and `PageSize`.
+
+### BiddingController
+- **POST `/bids`:** Create a new bid for a specific auction. Requires authorization 
+- **GET `/bids/{auctionId}`:** Retrieve all bids for a specific auction, sorted by bid time in descending order.
+
+## Testing
+
+This project includes two test projects to ensure the functionality and reliability of the Auction Service. They are organized as follows:
+
+### AuctionService.UnitTests
+
+This project contains unit tests for the Auction Service, verifying the correctness of its functionality in isolation.
+
+To run the unit tests, navigate to the `AuctionService.UnitTests` directory and execute the following command:
+
+  ```shell
+    dotnet test
+  ```
+### AuctionService.IntegrationTests
+
+This project contains integration tests for the Auction Service, ensuring that it interacts correctly with external components such as the database and messaging system.
+
+To run the integration tests, navigate to the AuctionService.IntegrationTests directory and execute the following command:
+
+  ```shell
+    dotnet test
+  ```
+
+
 
 
 ## Usage

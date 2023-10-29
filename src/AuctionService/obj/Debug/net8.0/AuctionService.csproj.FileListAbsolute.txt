@@ -52,3 +52,10 @@ C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Micro
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Google.Protobuf.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+C:\song-db-management\Car-Auction-Site\src\AuctionService\bin\Debug\net8.0\Grpc.Net.Common.dll
