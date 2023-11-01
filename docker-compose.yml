@@ -3,6 +3,7 @@ networks:
     ipam:
       config:
         - subnet: 10.5.0.0/16
+
 services:
   postgres:
     image: postgres
@@ -82,9 +83,9 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-      - ClientApp=http://app.carAuction.com
+      - ClientApp=http://app.carauction.com
       - ConnectionStrings__DefaultConnection=Server=postgres:5432;User Id=postgres;Password=postgrespw;Database=identity
-      - VIRTUAL_HOST=id.carAuction.com
+      - VIRTUAL_HOST=id.carauction.com
     depends_on:
       - postgres
     networks:
@@ -98,8 +99,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-      - ClientApp=http://app.carAuction.com
-      - VIRTUAL_HOST=api.carAuction.com
+      - ClientApp=http://app.carauction.com
+      - VIRTUAL_HOST=api.carauction.com
     networks:
       custom:
   bid-svc:
@@ -144,15 +145,15 @@ services:
     volumes:
       - /var/lib/web/data
     extra_hosts:
-      - id.carAuction.com:10.5.0.200
+      - id.carauction.com:10.5.0.200
     environment:
       - NEXTAUTH_SECRET=somethingreallyreallysecret
-      - NEXTAUTH_URL=http://app.carAuction.com
+      - NEXTAUTH_URL=http://app.carauction.com
       - NEXTAUTH_URL_INTERNAL=http://web-app:3000
       - API_URL=http://gateway-svc/
-      - ID_URL=http://id.carAuction.com
+      - ID_URL=http://id.carauction.com
       - NEXT_PUBLIC_NOTIFY_URL=http://gateway-svc/notifications
-      - VIRTUAL_HOST=app.carAuction.com
+      - VIRTUAL_HOST=app.carauction.com
       - VIRTUAL_PORT=3000
     networks:
       custom:
@@ -160,10 +161,12 @@ services:
     image: nginxproxy/nginx-proxy
     ports:
       - 80:80
+      - 443:443
     networks:
       custom:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./devcerts:/etc/nginx/certs
 volumes:
   pgdata:
   mongodata:
