@@ -21,6 +21,7 @@ This is a Car Auction Site leveraging .NET 8 and microservices architecture. It 
   - [AuctionController](#auctioncontroller)
   - [SearchController](#searchcontroller)
   - [BiddingController](#BiddingController)
+- [Testing](#testing)
 - [Usage](#usage)
 
 ## Prerequisites
@@ -121,6 +122,30 @@ The Identity service is responsible for the management of user identities and pr
 ### BiddingController
 - **POST `/bids`:** Create a new bid for a specific auction. Requires authorization 
 - **GET `/bids/{auctionId}`:** Retrieve all bids for a specific auction, sorted by bid time in descending order.
+
+## Testing
+
+This project includes two test projects to ensure the functionality and reliability of the Auction Service. They are organized as follows:
+
+### AuctionService.UnitTests
+
+This project contains unit tests for the Auction Service, verifying the correctness of its functionality in isolation.
+
+To run the unit tests, navigate to the `AuctionService.UnitTests` directory and execute the following command:
+
+  ```shell
+    dotnet test
+  ```
+### AuctionService.IntegrationTests
+
+This project contains integration tests for the Auction Service, ensuring that it interacts correctly with external components such as the database and messaging system.
+
+To run the integration tests, navigate to the AuctionService.IntegrationTests directory and execute the following command:
+
+  ```shell
+    dotnet test
+  ```
+
 
 
 
