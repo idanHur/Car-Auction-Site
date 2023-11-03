@@ -31,4 +31,4 @@ jobs:
             context: .
             file: src/IdentityService/Dockerfile
             push: true
-            tags: CHANGEME/identity-svc:latest
+            tags: idan12/identity-svc:latest
