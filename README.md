@@ -83,6 +83,11 @@ To set up and run the entire project with Docker Compose, follow the steps below
     docker-compose down
   ```
 
+### Frontend
+
+The docker-compose also loads up the frontend web-app in a docker container. 
+The frontend is accessible using the address "app.carauction.com", you just need to set up the host file as instructed in the web-app [README](/frontend/web-app/README.md). 
+
 ## Services
 
 ### Auction Service

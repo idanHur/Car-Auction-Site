@@ -11,6 +11,30 @@ This project is a car auction platform where users can browse, bid on, and purch
 - **Toasts**: Integrated toast notifications provide feedback to users about their interactions, especially during bidding processes.
 - **Authentication**: Incorporates NextAuth for secure user authentication when interacting with the backend.
 
+## Setup and HTTPS Configuration
+
+Before running the front-end using Docker and to ensure HTTPS support, follow these steps:
+
+### Update Hosts File
+
+1. Open your system's hosts file in a text editor with administrative privileges. On most systems, this file is located at `/etc/hosts`. You might need to use `sudo` to edit this file.
+
+    ```bash
+        sudo nano /etc/hosts
+    ```
+
+2. Add the following entries to your hosts file, and save the file.
+
+    ```plaintext
+        127.0.0.1 id.carauction.com app.carauction.com api.carauction.com
+    ```
+
+Now, your environment is set up to run the front-end with HTTPS support.
+
+
+## Docker
+
+The web-app supports docker and is loaded using the docker compose that also runs the backend services.
 
 ## Installation
 
